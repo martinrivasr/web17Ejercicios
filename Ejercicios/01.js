@@ -39,7 +39,8 @@ const registro  = {
                 'Testing Componentes, Redux',
                 'Extras Patrones, Hooks']
         }
-    ]
+    ],
+    busquedaActiva: false,
 };
 
 
