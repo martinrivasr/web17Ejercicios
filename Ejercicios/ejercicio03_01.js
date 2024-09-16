@@ -22,6 +22,7 @@ const createPath = (list) => {
     }
 }
 
+
 console.log(createPath(input1));
 
 const input2 = [
