@@ -46,7 +46,7 @@ const datos = [
     return result;
   }
 
-  console.log(JSON.stringify(getDatabySkill('JavaScript'),null,2));
+  console.log(JSON.stringify(getDatabySkill('JavaScript '),null,2));
 
 function getProjectos(input){
     let projectos = input.map(function(dato){
