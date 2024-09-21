@@ -48,15 +48,15 @@ const renderPlayList = (playlist) => {
         <button class="criterion" data-id="${playlist.name}" data-criterion="title">Sort by title</button>
         <button class="criterion" data-id="${playlist.name}" data-criterion="artist">Sort by artist</button>
       </div>
-
-      ${(playlist.songs || []).map(song => renderSong(playlist.name, song)).join('')}
+       ${playlist.songs.map(song => renderSong(playlist.name, song)).join('')}
+      
 
       <button class="remove-playlist" data-id="${playlist.name}">Remove playlist</button>
       <hr>
     </section>
   `;
 }
-
+//${(playlist.songs || []).map(song => renderSong(playlist.name, song)).join('')}
 // ${playlist.songs.map(song => renderSong(playlist.name, song)).join('')}
 
 const initEventListeners = () => {
