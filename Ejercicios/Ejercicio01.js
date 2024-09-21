@@ -50,7 +50,7 @@ let info = registro.cursos.filter(function(curso){
 });
 
 if(info){
-    console.log(info[0].FechaInicio);
+    console.log(`la fecha de inicio del curso es ${info[0].FechaInicio}`);
 }else{
     console.log("Curso no encontrado")
 }
