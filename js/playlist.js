@@ -18,7 +18,8 @@
 
 const musicCatalog = () => {
   /**
-   * Array of playlists in the catalog.
+   * Array of playlists in the catalog.git pull origin master --allow-unrelated-histories
+
    * @type {Playlist[]}
    */
   let playlists = [];
