@@ -101,7 +101,7 @@ const addSongToPlaylist = (playlistName, song) => {
       if (playlist.name === playlistName) {
         return {
           ...playlist,
-          songs: playlist.songs.filter(song => song.title !== title) // No mutamos, devolvemos una copia
+          songs: playlist.songs.filter(song => song.title !== title)
         };
       }
       return playlist;
