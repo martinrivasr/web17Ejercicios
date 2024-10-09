@@ -96,11 +96,16 @@ const addSongToPlaylist = (playlistName, song) => {
     if(!removeFromPlaylist){
       throw new Error(`no existe la Playlist ${playlistName}`);
     };
-    const removeSong = removeFromPlaylist.songs.find(song => song.title === title);
-    if (!removeSong){
-      throw new Error(`no existe la cancion ${title} en la playlist ${playlistName}`);
-    }
-    removeFromPlaylist.songs = removeFromPlaylist.songs.filter(song => song.title !== title);
+
+    playlists = playlists.map(playlist => {
+      if (playlist.name === playlistName) {
+        return {
+          ...playlist,
+          songs: playlist.songs.filter(song => song.title !== title) // No mutamos, devolvemos una copia
+        };
+      }
+      return playlist;
+    });
   };
   
   /**
@@ -108,18 +113,22 @@ const addSongToPlaylist = (playlistName, song) => {
    * @param {string} playlistName - The name of the playlist containing the song.
    * @param {string} title - The title of the song to mark as a favorite.
    */
+
   const favoriteSong = (playlistName, title) => {
-    playlists = playlists.map(playlist =>{
-      if(playlist.name === playlistName){
-         playlist.songs = playlist.songs.map(song =>{
-          if(song.title === title){
-            song.favorite = true;
-          }
-          return song;
-         })
+    playlists = playlists.map(playlist => {
+      if (playlist.name === playlistName) {
+        return {
+          ...playlist,
+          songs: playlist.songs.map(song => {
+            if (song.title === title) {
+              return { ...song, favorite: true };
+            }
+            return song;
+          })
+        };
       }
-    return playlist;
-    })
+      return playlist;
+    });
   };
   
   /**
